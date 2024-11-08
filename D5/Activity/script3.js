@@ -1,12 +1,11 @@
 const secretNumber = Math.floor(Math.random() * 11);
 let attempts = 0;
-
 let guessedNumber = 0;
 
-console.log("Welcome! Guest the Secret Number");
+console.log("Welcome! Guess the Secret Number");
 
 do {
-  guessedNumber = parseInt(prompt("Enter Guess Number "));
+  guessedNumber = parseInt(prompt("Enter your Guess Number "));
 
   if (guessedNumber < secretNumber) {
     console.log("Too Low! Try Again.");
