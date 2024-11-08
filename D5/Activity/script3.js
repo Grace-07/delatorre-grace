@@ -7,7 +7,7 @@ console.log("Welcome! Guess the Secret Number");
 do {
   guessedNumber = parseInt(prompt("Enter your Guess Number (1-10)"));
 
-  if (guessedNumber > 10 || guessedNumber < 1) {
+  if ((guessedNumber > 10 || guessedNumber < 1) || (isNaN(guessedNumber) || typeof guessedNumber !== "number")) {
     console.log("Please enter a number only (1-10). Try Again");
   } else {
     if (guessedNumber < secretNumber) {
