@@ -1,24 +1,28 @@
-const secretNumber = Math.floor(Math.random() * 11);
-let attempts = 0;
+const secretNumber = Math.floor(Math.random() * 10) + 1;
+let attempts = 1;
 let guessedNumber = 0;
 
 console.log("Welcome! Guess the Secret Number");
 
 do {
-  guessedNumber = parseInt(prompt("Enter your Guess Number "));
+  guessedNumber = parseInt(prompt("Enter your Guess Number (1-10)"));
 
-  if (guessedNumber < secretNumber) {
-    console.log("Too Low! Try Again.");
-
-    attempts++;
-  } else if (guessedNumber > secretNumber) {
-    console.log("Too High! Try Again.");
-
-    attempts++;
+  if (guessedNumber > 10 || guessedNumber < 1) {
+    console.log("Please enter a number only (1-10). Try Again");
   } else {
-    console.log(
-      "Congratulations! You guessed the correct number: " + secretNumber
-    );
+    if (guessedNumber < secretNumber) {
+      console.log("Too Low! Try Again.");
+
+      attempts++;
+    } else if (guessedNumber > secretNumber) {
+      console.log("Too High! Try Again.");
+
+      attempts++;
+    } else {
+      console.log(
+        "Congratulations! You guessed the correct number: " + secretNumber
+      );
+    }
   }
 } while (secretNumber !== guessedNumber);
 

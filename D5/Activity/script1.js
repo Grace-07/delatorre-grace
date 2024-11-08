@@ -1,7 +1,7 @@
 let score = parseInt(prompt("Enter a Score"));
 let grade = "";
 
-if (typeof score !== "number") {
+if (typeof score !== "number" || isNaN(score)) {
   alert("Please enter a number only. Try Again");
 } else {
   if (score >= 90) {
