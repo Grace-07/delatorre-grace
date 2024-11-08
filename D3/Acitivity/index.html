@@ -11,78 +11,623 @@
     />
   </head>
   <body>
+    <nav class="navbar">
+      <img src="images/logo.png" class="logo" />
+      <ul class="nav-links">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#review">Review</a></li>
+        <li><a href="#order">Order</a></li>
+      </ul>
+      <ul class="nav-links">
+        <li><a class="fa fa-fw fa-search" href="#"></a></li>
+        <li><a class="fa fa-fw fa-heart" href="#"></a></li>
+        <li><a class="fa fa-fw fa-shopping-cart" href="#"></a></li>
+      </ul>
+    </nav>
+
     <div class="container">
-      <nav class="navbar">
-        <img src="images/logo.png" class="logo" />
-        <ul class="nav-links">
-          <li><a class="active" href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#review">Review</a></li>
-          <li><a href="#order">Order</a></li>
-        </ul>
-        <ul class="nav-links">
-          <li><a class="fa fa-fw fa-search" href="#"></a></li>
-          <li><a class="fa fa-fw fa-heart" href="#"></a></li>
-          <li><a class="fa fa-fw fa-shopping-cart" href="#"></a></li>
-        </ul>
-      </nav>
-
-      <section>
-        <div>
-          <h1>Get Fresh <span>Food</span> in a Easy Way</h1>
+      <section class="row">
+        <div style="align-content: center">
+          <div>
+            <h1 class="main-title">
+              Get Fresh <span class="highlight">Food</span> in a Easy Way
+            </h1>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div style="padding-top: 3rem">
+            <button class="cta-btn">
+              Order Now <span class="fa fa-fw fa-chevron-right"></span>
+            </button>
+          </div>
         </div>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-        <div>
-          <button>Order Now</button>
+        <div style="align-content: center">
+          <img
+            style="max-width: 50em"
+            src="images/main_img.png"
+            alt=""
+            srcset=""
+          />
         </div>
       </section>
-
-      <section>
-        <h1>About Us</h1>
-
-        <div>
-          <h3>why Choose Us?</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-        <div>
-          <button>Order Now</button>
-        </div>
-      </section>
-
-      <section>
-        <h1>Our Menu</h1>
-        <div></div>
-      </section>
-
-      <section><h1>Our Gallery</h1></section>
-
-      <section><h1>Customer Review</h1></section>
-
-      <section><h1>Order Now</h1></section>
-
-      <section><h1>Our Team</h1></section>
-
-      <footer></footer>
     </div>
+
+    <div class="container">
+      <section id="about" class="row">
+        <div>
+          <img style="max-width: 50em" src="images/Food-Plate.png" alt="" />
+        </div>
+        <div>
+          <h1 class="" style="font-size: 3rem">
+            <span class="highlight">About</span> Us
+          </h1>
+
+          <div>
+            <h2>why Choose Us?</h2>
+            <p style="padding-top: 1rem">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div>
+            <div style="padding-top: 3rem">
+              <button class="cta-btn">
+                Order Now <span class="fa fa-fw fa-chevron-right"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="container">
+      <section id="menu">
+        <h1 class="title">Our <span class="highlight">Menu</span></h1>
+        <div>
+          <div class="row" style="justify-content: space-between">
+            <div class="col" style="max-width: 23%">
+              <div class="menu-card">
+                <img class="menu-pic" src="images/buger.jpg" alt="" />
+                <h3 class="primary-color">Burger</h3>
+
+                <p>
+                  Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien
+                  dictum himenaeos aptent semper lorem.
+                </p>
+
+                <h3>$20.00</h3>
+
+                <div>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star-half primary-color"></span>
+                </div>
+
+                <div style="padding-top: 1rem">
+                  <button class="menu-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" style="max-width: 23%">
+              <div class="menu-card">
+                <img class="menu-pic" src="images/pasta.jpg" alt="" />
+                <h3 class="primary-color">Pasta</h3>
+
+                <p>
+                  Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien
+                  dictum himenaeos aptent semper lorem.
+                </p>
+
+                <h3>$20.00</h3>
+
+                <div>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star-half primary-color"></span>
+                </div>
+
+                <div style="padding-top: 1rem">
+                  <button class="menu-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" style="max-width: 23%">
+              <div class="menu-card">
+                <img class="menu-pic" src="images/lasagna.webp" alt="" />
+                <h3 class="primary-color">Lasagna</h3>
+
+                <p>
+                  Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien
+                  dictum himenaeos aptent semper lorem.
+                </p>
+
+                <h3>$20.00</h3>
+
+                <div>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star-half primary-color"></span>
+                </div>
+
+                <div style="padding-top: 1rem">
+                  <button class="menu-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" style="max-width: 23%">
+              <div class="menu-card">
+                <img class="menu-pic" src="images/chocolate_Drink.jpg" alt="" />
+                <h3 class="primary-color">Drink</h3>
+
+                <p>
+                  Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien
+                  dictum himenaeos aptent semper lorem.
+                </p>
+
+                <h3>$20.00</h3>
+
+                <div>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star-half primary-color"></span>
+                </div>
+
+                <div style="padding-top: 1rem">
+                  <button class="menu-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="row"
+            style="justify-content: space-between; padding-top: 1rem"
+          >
+            <div class="col" style="max-width: 23%">
+              <div class="menu-card">
+                <img class="menu-pic" src="images/pizza.jpg" alt="" />
+                <h3 class="primary-color">Pizza</h3>
+
+                <p>
+                  Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien
+                  dictum himenaeos aptent semper lorem.
+                </p>
+
+                <h3>$20.00</h3>
+
+                <div>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star-half primary-color"></span>
+                </div>
+
+                <div style="padding-top: 1rem">
+                  <button class="menu-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" style="max-width: 23%">
+              <div class="menu-card">
+                <img class="menu-pic" src="images/Hot_dog.jpg" alt="" />
+                <h3 class="primary-color">Hotdog</h3>
+
+                <p>
+                  Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien
+                  dictum himenaeos aptent semper lorem.
+                </p>
+
+                <h3>$20.00</h3>
+
+                <div>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star-half primary-color"></span>
+                </div>
+
+                <div style="padding-top: 1rem">
+                  <button class="menu-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" style="max-width: 23%">
+              <div class="menu-card">
+                <img class="menu-pic" src="images/ice_cream.jpg" alt="" />
+                <h3 class="primary-color">Ice Cream</h3>
+
+                <p>
+                  Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien
+                  dictum himenaeos aptent semper lorem.
+                </p>
+
+                <h3>$20.00</h3>
+
+                <div>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star-half primary-color"></span>
+                </div>
+
+                <div style="padding-top: 1rem">
+                  <button class="menu-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" style="max-width: 23%">
+              <div class="menu-card">
+                <img class="menu-pic" src="images/biryani.webp" alt="" />
+                <h3 class="primary-color">Biryani</h3>
+
+                <p>
+                  Lorem ipsum odor amet, consectetuer adipiscing elit. Sapien
+                  dictum himenaeos aptent semper lorem.
+                </p>
+
+                <h3>$20.00</h3>
+
+                <div>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star primary-color"></span>
+                  <span class="fa fa-fw fa-star-half primary-color"></span>
+                </div>
+
+                <div style="padding-top: 1rem">
+                  <button class="menu-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="container">
+      <section id="gallery">
+        <h1 class="title">Our <span class="highlight">Gallery</span></h1>
+        <div>
+          <div style="display: flex; justify-content: center">
+            <div>
+              <img class="gallery-pic" src="images/gallary_1.jpg" alt="" />
+            </div>
+            <div>
+              <img class="gallery-pic" src="images/gallary_2.jpg" alt="" />
+            </div>
+            <div>
+              <img class="gallery-pic" src="images/gallary_3.jpg" alt="" />
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: center">
+            <div>
+              <img class="gallery-pic" src="images/gallary_4.jpg" alt="" />
+            </div>
+            <div>
+              <img class="gallery-pic" src="images/gallary_5.jpg" alt="" />
+            </div>
+            <div>
+              <img class="gallery-pic" src="images/gallary_6.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="container">
+      <section id="review">
+        <h1 class="title">Customer <span class="highlight">Review</span></h1>
+        <div class="row" style="justify-content: space-between">
+          <div class="col" style="max-width: 23%">
+            <div class="card">
+              <img class="review-pic" src="images/review_1.png" alt="" />
+              <h3>John Doe</h3>
+              <div>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star-half primary-color"></span>
+              </div>
+              <p>
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Metus arcu
+                ornare blandit ut in suspendisse amet nostra cubilia. Sociosqu
+                ultrices nostra enim nisl pulvinar varius purus facilisis.
+                Pretium pulvinar cursus lorem; litora aliquam et tortor. Ut nunc
+                conubia ipsum cras lectus iaculis? Id laoreet augue ac blandit
+                torquent. Nunc erat pharetra erat neque lorem a.
+              </p>
+            </div>
+          </div>
+
+          <div class="col" style="max-width: 23%">
+            <div class="card">
+              <img class="review-pic" src="images/review_2.png" alt="" />
+              <h3>John Doe</h3>
+              <div>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star-half primary-color"></span>
+              </div>
+              <p>
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Metus arcu
+                ornare blandit ut in suspendisse amet nostra cubilia. Sociosqu
+                ultrices nostra enim nisl pulvinar varius purus facilisis.
+                Pretium pulvinar cursus lorem; litora aliquam et tortor. Ut nunc
+                conubia ipsum cras lectus iaculis? Id laoreet augue ac blandit
+                torquent. Nunc erat pharetra erat neque lorem a.
+              </p>
+            </div>
+          </div>
+
+          <div class="col" style="max-width: 23%">
+            <div class="card">
+              <img class="review-pic" src="images/review_3.png" alt="" />
+              <h3>John Doe</h3>
+              <div>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star-half primary-color"></span>
+              </div>
+              <p>
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Metus arcu
+                ornare blandit ut in suspendisse amet nostra cubilia. Sociosqu
+                ultrices nostra enim nisl pulvinar varius purus facilisis.
+                Pretium pulvinar cursus lorem; litora aliquam et tortor. Ut nunc
+                conubia ipsum cras lectus iaculis? Id laoreet augue ac blandit
+                torquent. Nunc erat pharetra erat neque lorem a.
+              </p>
+            </div>
+          </div>
+
+          <div class="col" style="max-width: 23%">
+            <div class="card">
+              <img class="review-pic" src="images/review_4.png" alt="" />
+              <h3>John Doe</h3>
+              <div>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star primary-color"></span>
+                <span class="fa fa-fw fa-star-half primary-color"></span>
+              </div>
+              <p>
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Metus arcu
+                ornare blandit ut in suspendisse amet nostra cubilia. Sociosqu
+                ultrices nostra enim nisl pulvinar varius purus facilisis.
+                Pretium pulvinar cursus lorem; litora aliquam et tortor. Ut nunc
+                conubia ipsum cras lectus iaculis? Id laoreet augue ac blandit
+                torquent. Nunc erat pharetra erat neque lorem a.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="order" class="container">
+      <section class="" id="order-now">
+        <h1 class="title"><span class="highlight">Order</span> Now</h1>
+        <div class="row" style="justify-content: center">
+          <div style="width: 50%">
+            <img
+              style="max-width: 50em; max-height: 50em"
+              src="images/order_image.png"
+              alt=""
+            />
+          </div>
+          <div style="width: 50%; margin-top: 10rem">
+            <form style="display: -webkit-inline-box" action="">
+              <div style="width: 90%">
+                <div>
+                  <label class="label" for="name">Name</label>
+                  <br />
+                  <input
+                    class="input-box"
+                    id="name"
+                    type="text"
+                    placeholder="your name"
+                  />
+                </div>
+                <div>
+                  <label class="label" for="name">Number</label>
+                  <br />
+                  <input
+                    class="input-box"
+                    id="name"
+                    type="text"
+                    placeholder="your number"
+                  />
+                </div>
+                <div>
+                  <label class="label" for="name">Your Order</label>
+                  <br />
+                  <input
+                    class="input-box"
+                    id="name"
+                    type="text"
+                    placeholder="food name"
+                  />
+                </div>
+
+                <div>
+                  <button class="cta-btn">Order Now</button>
+                </div>
+              </div>
+
+              <div style="width: 100%">
+                <div>
+                  <label class="label" for="name">Email</label>
+                  <br />
+                  <input
+                    class="input-box"
+                    id="name"
+                    type="email"
+                    placeholder="your email"
+                  />
+                </div>
+                <div>
+                  <label class="label" for="name">How Much</label>
+                  <br />
+                  <input
+                    class="input-box"
+                    id="name"
+                    type="number"
+                    placeholder="how many order"
+                  />
+                </div>
+                <div>
+                  <label class="label" for="name">Address</label>
+                  <br />
+                  <input
+                    class="input-box"
+                    id="name"
+                    type="text"
+                    placeholder="your address"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="" id="team">
+      <h1 class="title">Our <span class="highlight">Team</span></h1>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 3rem;
+        "
+        class="container"
+      >
+        <div style="border: 5px solid #555; border-radius: 50%; padding: 20px">
+          <img class="chef-pic" src="images/chef1.png" alt="" />
+        </div>
+        <div style="border: 5px solid #555; border-radius: 50%; padding: 20px">
+          <img class="chef-pic" src="images/chef2.png" alt="" />
+        </div>
+        <div style="border: 5px solid #555; border-radius: 50%; padding: 20px">
+          <img class="chef-pic" src="images/chef3.jpg" alt="" />
+        </div>
+        <div style="border: 5px solid #555; border-radius: 50%; padding: 20px">
+          <img class="chef-pic" src="images/chef4.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>Location</h3>
+
+        <div>
+          <ul>
+            <li>Sri Lanka</li>
+            <li>USA</li>
+            <li>India</li>
+            <li>Japan</li>
+            <li>Italy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <h3>Quick Link</h3>
+
+        <div>
+          <ul>
+            <li><a class="" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#review">Review</a></li>
+            <li><a href="#order">Order</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <h3>Contact</h3>
+
+        <div>
+          <ul>
+            <li>+94 12 3456 789</li>
+            <li>+94 25 5568 456</li>
+            <li>johndoe123@gmail.com</li>
+            <li>foodshop123@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <h3>Our Service</h3>
+
+        <div>
+          <ul>
+            <li>Fast Delivery</li>
+            <li>Easy Payment</li>
+            <li>24 x 7 Service</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <h3>Follow</h3>
+        <div>
+          <ul class="footer-soc-med">
+            <li><a class="fa fa-fw fa-facebook" href="#"></a></li>
+            <li><a class="fa fa-fw fa-twitter" href="#"></a></li>
+            <li><a class="fa fa-fw fa-instagram" href="#"></a></li>
+            <li><a class="fa fa-fw fa-linkedin" href="#"></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div>
+            <p>Design by <span class="fa fa-fw fa-smile-o" style="color: #fac031;"></span><span style="color: #fac031;">WT Master Code</span></p>
+        </div> -->
+    </footer>
   </body>
 </html>
