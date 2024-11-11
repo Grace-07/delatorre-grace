@@ -26,12 +26,12 @@ console.log("Student No.2 Name: " + students[1].name);
 students.push({ name: "Fin Look", age: 5, grade: 6 });
 
 // Step 4: Loop through the 'students' array and log each student's name and grade to the console.
-console.log(".... Student List ....")
+console.log(".... Student List ....");
 students.forEach((student, i) => {
   console.log(`Student No.${i + 1} Name: ${student.name}`);
   console.log(`Student No.${i + 1} Grade: ${student.grade}`);
 });
-console.log(".....")
+console.log(".....");
 
 // Step 5: Create an object called 'book' with properties 'title', 'author', and 'year'.
 const book = {
