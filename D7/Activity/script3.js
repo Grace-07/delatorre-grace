@@ -13,17 +13,21 @@ const products = [
   },
 ];
 
-const cart = [];
-
 const productList = document.getElementById("product-list");
 const cartList = document.getElementById("cart-items");
+let total = 0;
 
 window.addEventListener("load", (event) => {
+  function TotalDisplay() {
+    const totalText = document.getElementById("total");
+    totalText.textContent = `Total: $${total.toFixed(2)}`;
+  }
+
   products.forEach((product) => {
     const productItem = document.createElement("li");
 
     const productSpan = document.createElement("span");
-    productSpan.textContent = `${product.name} Price: $${product.price} `;
+    productSpan.textContent = `${product.name} - Price: $${product.price} `;
     productItem.appendChild(productSpan);
 
     const addButton = document.createElement("button");
@@ -31,6 +35,8 @@ window.addEventListener("load", (event) => {
     productItem.appendChild(addButton);
 
     productList.appendChild(productItem);
+
+    TotalDisplay();
 
     addButton.addEventListener("click", (event) => {
       function getExistingCartItems(searchText) {
@@ -47,13 +53,15 @@ window.addEventListener("load", (event) => {
 
       if (existingItems.length > 0) {
         const selectedItem = existingItems[0].querySelector("#qty");
+        const updatedQty = parseInt(selectedItem.textContent) + 1;
 
-        selectedItem.textContent = parseInt(selectedItem.textContent) + 1;
+        selectedItem.textContent = updatedQty;
+        total += product.price;
       } else {
         const cartItem = document.createElement("li");
 
         const cartSpan = document.createElement("span");
-        cartSpan.textContent = `${product.name} Price: $${product.price} `;
+        cartSpan.textContent = `${product.name} - Price: $${product.price} x `;
         cartItem.appendChild(cartSpan);
 
         const qty = document.createElement("span");
@@ -67,10 +75,28 @@ window.addEventListener("load", (event) => {
 
         cartList.appendChild(cartItem);
 
+        total += product.price;
+
         deleteButton.addEventListener("click", function () {
+          const existingItems = getExistingCartItems(product.name);
+          const selectedItemQty = existingItems[0].querySelector("#qty");
+          const formattedQty = parseInt(selectedItemQty.textContent);
+
+          if (formattedQty > 1) {
+            total = total - formattedQty * product.price;
+          } else {
+            total -= product.price;
+          }
+
+          TotalDisplay();
+
           cartList.removeChild(cartItem);
+
+          event.preventDefault();
         });
       }
+
+      TotalDisplay();
 
       event.preventDefault();
     });
