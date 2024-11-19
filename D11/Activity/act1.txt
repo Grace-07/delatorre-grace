@@ -1,0 +1,89 @@
+// Step 1: Create a new MongoDB Atlas cluster and connect to it using MongoDB Compass .
+
+// Step 2: In MongoDB Compass, create a new database called "Bookstore" and a collection called "Books".
+
+// Step 3: Perform the following CRUD operations using MongoDB Compass:
+
+// a) Create Operation:
+// Insert at least three book documents with different fields such as title, author, genre, and publication year.
+
+db.Books.insertOne({
+    title: "Book 1",
+    author: "Author 1",
+    genre: "Genre 1",
+    publicationYear: 2020
+});
+
+db.Books.insertOne({
+    title: "Book 2",
+    author: "Author 2",
+    genre: "Genre 2",
+    publicationYear: 2021
+});
+
+db.Books.insertOne({
+    title: "Book 3",
+    author: "Author 3",
+    genre: "Genre 3",
+    publicationYear: 2022
+});
+
+// b) Read Operation:
+// Retrieve all the book documents in the "Books" collection.
+
+db.Books.find({});
+
+// Retrieve a specific book document based on its title or author.
+
+db.Books.find({   
+    $or: [
+        { title: "Book 1" },
+        { author: "Author 3" }
+    ]
+});
+
+// c) Update Operation:
+// Update the genre of a book document.
+
+db.Books.updateOne(
+    { genre: "Genre 1" },   
+    { $set: { genre: "Genre 4" } } 
+);
+
+// Update the publication year of a book document.
+
+db.Books.updateOne(
+    { publicationYear: 2022 },   
+    { $set: { publicationYear: 2024 } } 
+);
+
+// d) Delete Operation:
+// Delete a book document based on its title or author.
+
+db.Books.deleteOne({
+    $or: [
+        { title: "Book 2" },
+        { author: "Author 3" }
+    ]
+});
+
+// Step 4: After each operation, verify the changes by re-reading the data from the "Books" collection.
+
+db.Books.find({});
+
+{
+  _id: ObjectId('673c999aeb87bdea3a554b93'),
+  title: 'Book 1',
+  author: 'Author 1',
+  genre: 'Genre 4',
+  publicationYear: 2020
+},
+{
+  _id: ObjectId('673c99b0eb87bdea3a554b95'),
+  title: 'Book 3',
+  author: 'Author 3',
+  genre: 'Genre 3',
+  publicationYear: 2024
+}
+
+// Note: Remember to clean up the cluster and delete the "Bookstore" database if no longer needed.
