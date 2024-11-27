@@ -7,6 +7,9 @@ const addComment = async (req, res) => {
   try {
     const { blog, text } = req.body;
 
+    const existingBlog = await Blog.findById(blog).populate("author", "name");
+    if (!existingBlog) return res.status(404).json({ error: "Blog not found" });
+
     const comment = await Comment.create({
       blog,
       text,
