@@ -33,17 +33,15 @@ const getCommentsByBlog = async (req, res) => {
     const blog = await Blog.findById(blogId).populate("author", "name");
     if (!blog) return res.status(404).json({ error: "Blog not found" });
 
-    const comments = await Comment.find({ blog: blogId });
+    const comments = await Comment.find({ blog: blogId }).populate("user", "name").populate("blog", "_id content title author");
 
     if (!comments || comments.length <= 0)
-      return res.status(404).json({ error: "Comments not found" });
+      return res.status(404).json({ error: "Comments by blog not found" });
 
-    res
-      .status(200)
-      .json({
-        message: "Comments by blog post retrieved successfully.",
-        comments,
-      });
+    res.status(200).json({
+      message: "Comments by blog post retrieved successfully.",
+      comments,
+    });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
