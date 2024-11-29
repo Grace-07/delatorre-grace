@@ -1,26 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { ListGroup, Table } from "react-bootstrap";
-import team  from "../team-data/team.json";
+import { Table } from "react-bootstrap";
+import team from "../team-data/team.json";
 
 const TeamDetail = () => {
   const { id } = useParams();
 
   const selectedTeam = team.find((member) => member.id == Number(id));
 
-  console.log("selectedTeam", selectedTeam);
-  console.log("id", id);
-
-
   return (
     <div>
-      <h2>Team Details</h2>
-      {/* <ListGroup>
-        <ListGroup.Item>ID: {selectedTeam.id}</ListGroup.Item>
-        <ListGroup.Item>Name: {selectedTeam.name}</ListGroup.Item>
-        <ListGroup.Item>Email Address: {selectedTeam.email}</ListGroup.Item>
-        <ListGroup.Item>Role: {selectedTeam.role}</ListGroup.Item>
-      </ListGroup> */}
+      <h2 className="mb-5">Team Details</h2>
 
       <Table>
         <thead>
