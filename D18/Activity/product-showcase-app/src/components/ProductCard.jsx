@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Modal, Button } from "react-bootstrap";
+import { Card, Modal, Button, Image } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "../styles/custom.css";
 import { IoPricetagOutline } from "react-icons/io5";
@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
           <Card.Text>
             <IoPricetagOutline /> ${product.price}
           </Card.Text>
-          <Button variant="primary" onClick={handleShow}>
+          <Button variant="success" onClick={handleShow}>
             View Details
           </Button>
         </Card.Body>
@@ -36,10 +36,11 @@ const ProductCard = ({ product }) => {
           <Modal.Title>{product.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <Image src={product.image} fluid className="mb-5" />
           <p>{product.description}</p>
           <p className="text-capitalize">Category: {product.category}</p>
           <p>Price: ${product.price}</p>
-          <p>Rating: {product.rating.rate}</p>
+          <p>Rating: {product.rating.rate} / 5</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
