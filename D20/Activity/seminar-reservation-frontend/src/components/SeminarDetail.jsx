@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SeminarDetail = ({ handleCancel, handleEdit }) => {
+const SeminarDetail = ({ handleCancel, handleEdit, seminar }) => {
   return (
     <div>
       <div className="px-4 sm:px-0">
@@ -17,35 +17,31 @@ const SeminarDetail = ({ handleCancel, handleEdit }) => {
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm/6 font-medium text-gray-900">Title</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              Margot Foster
+              {seminar.title}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm/6 font-medium text-gray-900">Description</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim
-              incididunt cillum culpa consequat. Excepteur qui ipsum aliquip
-              consequat sint. Sit id mollit nulla mollit nostrud in ea officia
-              proident. Irure nostrud pariatur mollit ad adipisicing
-              reprehenderit deserunt qui eu.
+              {seminar.description}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm/6 font-medium text-gray-900">Date</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              August 12, 2024
+              {seminar.date}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm/6 font-medium text-gray-900">Time</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              08:00 AM to 05:00 PM
+              {seminar.timeFrame.from} to {seminar.timeFrame.to}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm/6 font-medium text-gray-900">Fee</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              $120.00
+              ${Number(seminar.fee).toFixed(2)}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -53,7 +49,7 @@ const SeminarDetail = ({ handleCancel, handleEdit }) => {
               Available Slot
             </dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              500
+              {seminar.slotsAvailable}
             </dd>
           </div>
         </dl>
@@ -74,13 +70,13 @@ const SeminarDetail = ({ handleCancel, handleEdit }) => {
               Street Address
             </dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              Happy Street
+              {seminar.venue.street}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm/6 font-medium text-gray-900">City</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              Quezon City
+              {seminar.venue.city}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -88,7 +84,7 @@ const SeminarDetail = ({ handleCancel, handleEdit }) => {
               State / Province
             </dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              Manila
+              {seminar.venue.region}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -96,7 +92,7 @@ const SeminarDetail = ({ handleCancel, handleEdit }) => {
               ZIP / Postal code
             </dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              1234
+              {seminar.venue.postal}
             </dd>
           </div>
         </dl>
@@ -115,7 +111,7 @@ const SeminarDetail = ({ handleCancel, handleEdit }) => {
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm/6 font-medium text-gray-900">Name</dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              Happy Street
+              {seminar.speaker.name}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -123,7 +119,7 @@ const SeminarDetail = ({ handleCancel, handleEdit }) => {
               LinkedIn Link
             </dt>
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
-              http://sample.com
+              {seminar.speaker.linkedin}
             </dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -158,6 +154,7 @@ const SeminarDetail = ({ handleCancel, handleEdit }) => {
 SeminarDetail.propTypes = {
   handleCancel: PropTypes.func,
   handleEdit: PropTypes.func,
+  seminar: PropTypes.object,
 };
 
 export default SeminarDetail;

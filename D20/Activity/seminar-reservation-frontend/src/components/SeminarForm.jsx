@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SeminarForm = ({ handleCancel, handleSubmit }) => {
+const SeminarForm = ({ handleCancel, handleSubmit, handleForm, form }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -33,6 +33,9 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                       id="title"
                       className="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
                       placeholder="My Seminar"
+                      onChange={(e) => handleForm("title", e.target.value)}
+                      value={form.title}
+                      required
                     />
                   </div>
                 </div>
@@ -47,6 +50,9 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <textarea
+                    onChange={(e) => handleForm("description", e.target.value)}
+                    value={form.description}
+                    required
                     name="description"
                     id="description"
                     rows="3"
@@ -67,10 +73,12 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    onChange={(e) => handleForm("date", e.target.value)}
+                    required
+                    value={form.date}
                     type="date"
                     name="date"
                     id="date"
-                    // autoComplete="given-name"
                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                 </div>
@@ -85,10 +93,14 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    required
+                    onChange={(e) => {
+                      handleForm("timeFrame.from", e.target.value);
+                    }}
+                    value={form.timeFrame.from}
                     type="time"
                     name="start-time"
                     id="start-time"
-                    // autoComplete="family-name"
                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                 </div>
@@ -103,10 +115,12 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    value={form.timeFrame.to}
+                    onChange={(e) => handleForm("timeFrame.to", e.target.value)}
+                    required
                     type="time"
                     name="time-end"
                     id="time-end"
-                    // autoComplete="family-name"
                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                 </div>
@@ -120,13 +134,20 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                   Fee
                 </label>
                 <div className="mt-2">
-                  <input
-                    type="number"
-                    name="fee"
-                    id="fee"
-                    // autoComplete="given-name"
-                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  />
+                  <div className="flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                    <div className="shrink-0 select-none text-base text-gray-500 sm:text-sm/6">
+                      $
+                    </div>
+                    <input
+                      className="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
+                      onChange={(e) => handleForm("fee", e.target.value)}
+                      value={form.fee}
+                      required
+                      type="number"
+                      name="fee"
+                      id="fee"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -139,10 +160,14 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    onChange={(e) =>
+                      handleForm("slotsAvailable", e.target.value)
+                    }
+                    value={form.slotsAvailable}
+                    required
                     type="number"
                     name="slot"
                     id="slot"
-                    // autoComplete="family-name"
                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                 </div>
@@ -168,6 +193,9 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    onChange={(e) => handleForm("venue.street", e.target.value)}
+                    value={form.venue.street}
+                    required
                     type="text"
                     name="street-address"
                     id="street-address"
@@ -186,6 +214,9 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    onChange={(e) => handleForm("venue.city", e.target.value)}
+                    value={form.venue.city}
+                    required
                     type="text"
                     name="city"
                     id="city"
@@ -204,6 +235,9 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    onChange={(e) => handleForm("venue.region", e.target.value)}
+                    value={form.venue.region}
+                    required
                     type="text"
                     name="region"
                     id="region"
@@ -222,7 +256,10 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
-                    type="text"
+                    onChange={(e) => handleForm("venue.postal", e.target.value)}
+                    value={form.venue.postal}
+                    required
+                    type="number"
                     name="postal-code"
                     id="postal-code"
                     autoComplete="postal-code"
@@ -251,6 +288,11 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    onChange={(e) =>
+                      handleForm("speaker.firstName", e.target.value)
+                    }
+                    value={form.speaker.firstName}
+                    required
                     type="text"
                     name="first-name"
                     id="first-name"
@@ -269,6 +311,11 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    onChange={(e) =>
+                      handleForm("speaker.lastName", e.target.value)
+                    }
+                    value={form.speaker.lastName}
+                    required
                     type="text"
                     name="last-name"
                     id="last-name"
@@ -287,10 +334,13 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
                 </label>
                 <div className="mt-2">
                   <input
+                    onChange={(e) =>
+                      handleForm("speaker.linkedin", e.target.value)
+                    }
+                    value={form.speaker.linkedin}
                     id="linkedin"
                     name="linkedin"
                     type="text"
-                    // autoComplete="email"
                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                 </div>
@@ -351,7 +401,9 @@ const SeminarForm = ({ handleCancel, handleSubmit }) => {
 
 SeminarForm.propTypes = {
   handleCancel: PropTypes.func,
-  handleSubmit: PropTypes.func
+  handleSubmit: PropTypes.func,
+  form: PropTypes.object,
+  handleForm: PropTypes.func,
 };
 
 export default SeminarForm;

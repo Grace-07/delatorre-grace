@@ -1,6 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, SetError] = useState(null);
+
+  const navigate = useNavigate(); // useNavigate hook
+
+  const handleSubmit = async () => {
+    console.log("email", email);
+    console.log("password", password);
+
+    setIsLoading(true);
+
+    const response = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ password: password, email: email }),
+    });
+
+    console.log("response", response);
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      SetError(data.error);
+      throw new Error(data.error || "Login failed.");
+    }
+
+    console.log("data", data);
+
+    localStorage.setItem("auth", JSON.stringify(data));
+
+    setIsLoading(false);
+
+    navigate("/");
+  };
+
   return (
     <div>
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -16,7 +56,7 @@ const Login = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6">
             <div>
               <label
                 htmlFor="email"
@@ -26,6 +66,7 @@ const Login = () => {
               </label>
               <div className="mt-2">
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
                   type="email"
                   name="email"
                   id="email"
@@ -55,6 +96,7 @@ const Login = () => {
               </div>
               <div className="mt-2">
                 <input
+                  onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   name="password"
                   id="password"
@@ -67,12 +109,36 @@ const Login = () => {
 
             <div>
               <button
-                type="submit"
+                type="button"
+                onClick={handleSubmit}
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                disabled={isLoading}
               >
-                Sign in
+                {isLoading ? (
+                  <span className="loading loading-bars loading-sm"></span>
+                ) : (
+                  "Sign in"
+                )}
               </button>
             </div>
+            {error && (
+              <div role="alert" className="alert alert-error">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 shrink-0 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>{error}</span>
+              </div>
+            )}
           </form>
           {/* 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
